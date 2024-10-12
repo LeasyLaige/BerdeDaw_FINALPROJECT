@@ -1,0 +1,87 @@
+{
+  "configurations" : [ {
+    "mediaTitle" : "YUNGBLUD - Abyss (from Kaiju No. 8) [Official Lyric Video]",
+    "mediaAuthor" : "YUNGBLUDVEVO",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=LYabT4zZnJQ&list=RDLYabT4zZnJQ&start_radio=1",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\YUNGBLUD - Abyss (from Kaiju No. 8) [Official Lyric Video].m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728276885152.jpg"
+  }, {
+    "mediaTitle" : "Hozier - Too Sweet (Official Lyric Video)",
+    "mediaAuthor" : "Hozier",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=aezstCBHOPQ&list=RDLYabT4zZnJQ&index=2",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Hozier - Too Sweet (Official Lyric Video).m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280371462.jpg"
+  }, {
+    "mediaTitle" : "Imagine Dragons - Natural (Lyrics)",
+    "mediaAuthor" : "ImagineDragonsVEVO",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=V5M2WZiAy6k&list=RDLYabT4zZnJQ&index=5",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Imagine Dragons - Natural (Lyrics).m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280521834.jpg"
+  }, {
+    "mediaTitle" : "Imagine Dragons - Sharks (Official Music Video)",
+    "mediaAuthor" : "ImagineDragonsVEVO",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=Te3_VlimRw0&list=RDLYabT4zZnJQ&index=6",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Imagine Dragons - Sharks (Official Music Video).m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280665357.jpg"
+  }, {
+    "mediaTitle" : "WTF 2",
+    "mediaAuthor" : "Ugovhb - Topic",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=7n1_Yt1c7qo&list=RDLYabT4zZnJQ&index=8",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\WTF 2.m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280860702.jpg"
+  }, {
+    "mediaTitle" : "Travis Scott - SDP Interlude | Spiderman: Into The Spiderverse [AMV/Edit] (FLASH WARNING)",
+    "mediaAuthor" : "AMycroWave",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=xZskdorq3cI&list=RDLYabT4zZnJQ&index=11",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Travis Scott - SDP Interlude  Spiderman Into The Spiderverse [AMVEdit] (FLASH WARNING).m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728281176642.jpg"
+  }, {
+    "mediaTitle" : "Friends",
+    "mediaAuthor" : "Chase Atlantic - Topic",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=qFdoMMR-7fc&list=RDLYabT4zZnJQ&index=13",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Friends.m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728281567469.jpg"
+  }, {
+    "mediaTitle" : "Sub Urban - Freak (feat. REI AMI) [Official Music Video]",
+    "mediaAuthor" : "Sub Urban",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=zNrKoWG7Cj0&list=RDLYabT4zZnJQ&index=18",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Sub Urban - Freak (feat. REI AMI) [Official Music Video].m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Test5 (2)\\Test5\\Test5\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728283186881.jpg"
+  }, {
+    "mediaTitle" : "CENTRAL CEE FT. LIL BABY - BAND4BAND (MUSIC VIDEO)",
+    "mediaAuthor" : "Central Cee",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=pDddlvCfTiw&list=RDhOHKltAiKXQ&index=3",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\CENTRAL CEE FT. LIL BABY - BAND4BAND (MUSIC VIDEO).m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728381453213.jpg"
+  }, {
+    "mediaTitle" : "Tommy Richman - MILLION DOLLAR BABY (Official Music Video)",
+    "mediaAuthor" : "Tommy Richman",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=Zf1d8SGuxfs&list=RDhOHKltAiKXQ&index=7",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Tommy Richman - MILLION DOLLAR BABY (Official Music Video).m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728382995654.jpg"
+  }, {
+    "mediaTitle" : "Eminem - Houdini [Official Music Video]",
+    "mediaAuthor" : "EminemVEVO",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=22tVWwmTie8&list=RDhOHKltAiKXQ&index=9",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Eminem - Houdini [Official Music Video].m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728384481910.jpg"
+  }, {
+    "mediaTitle" : "Travis Scott - TIL FURTHER NOTICE (Lyrics) Ft. James Blake, 21 Savage",
+    "mediaAuthor" : "Unique Sound",
+    "request" : "launch",
+    "mediaLink" : "https://www.youtube.com/watch?v=-56P0CX9Hqs&list=RDhOHKltAiKXQ&index=11",
+    "filePath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Travis Scott - TIL FURTHER NOTICE (Lyrics) Ft. James Blake, 21 Savage.m4a",
+    "thumbnailPath" : "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728389377788.jpg"
+  } ]
+}

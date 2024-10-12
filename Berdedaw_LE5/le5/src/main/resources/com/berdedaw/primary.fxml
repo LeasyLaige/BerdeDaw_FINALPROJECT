@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #242C36;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.berdedaw.PrimaryController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="900.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="900.0">
+               <children>
+                  <AnchorPane prefHeight="50.0" prefWidth="902.0" style="-fx-background-color: #1e2126;">
+                     <children>
+                        <ImageView blendMode="COLOR_DODGE" fitHeight="38.0" fitWidth="33.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="8.399999999999999" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="853.8" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="57.0" layoutY="11.0" text="GPlay.mini">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="24.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="0.21969699137138587" endY="0.8030303680535519" startX="1.0" startY="0.2992424820408677">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.11357894539833069" green="0.8526315689086914" blue="0.10105263441801071" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="searchField" layoutX="452.0" layoutY="11.0" onKeyPressed="#searchFieldEntered" prefHeight="28.0" prefWidth="326.0" promptText="[Link] https://" style="-fx-background-color: lightgray; -fx-background-radius: 30;">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                        <Button fx:id="searchButton" layoutX="785.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#searchButtonClicked" onMouseEntered="#searchButtonHoverEntered" onMouseExited="#searchButtonHoverExited" prefHeight="28.0" prefWidth="62.0" style="-fx-background-color: Green; -fx-background-radius: 30;" text="Search" textFill="WHITE">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox layoutY="50.0" prefHeight="450.0" prefWidth="900.0">
+               <children>
+                  <AnchorPane prefHeight="447.0" prefWidth="350.0">
+                     <children>
+                        <ListView fx:id="listView" editable="true" prefHeight="450.0" prefWidth="350.0" style="-fx-background-color: #1e2126;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="450.0" prefWidth="550.0">
+                     <children>
+                        <ImageView fx:id="mediaImage" fitHeight="245.0" fitWidth="247.0" layoutX="152.0" layoutY="33.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <MediaView fx:id="mediaView" fitHeight="270.0" fitWidth="550.0" layoutX="-2.0" />
+                        <Label fx:id="mediaTitle" alignment="CENTER" layoutX="4.0" layoutY="278.0" prefHeight="38.0" prefWidth="544.0" text="Media Title" textFill="WHITE">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mediaAuthor" alignment="CENTER" layoutX="4.0" layoutY="316.0" prefHeight="18.0" prefWidth="544.0" text="Media Author" textFill="#918c8c">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="mediaSlider" blockIncrement="1.0" layoutX="122.0" layoutY="338.0" onDragDetected="#setVideoSlider" prefHeight="24.0" prefWidth="307.0" />
+                        <Label fx:id="currentTimeLabel" layoutX="87.0" layoutY="340.0" text="0:00" textFill="WHITE" />
+                        <Label fx:id="totalDurationLabel" layoutX="429.0" layoutY="340.0" text="0:00" textFill="WHITE" />
+                        <Button fx:id="resumeButton" layoutX="248.0" layoutY="370.0" mnemonicParsing="false" onAction="#playButtonClicked" prefHeight="50.0" prefWidth="54.0" style="-fx-background-radius: 100; -fx-background-color: white;" text="II">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="playButton" layoutX="248.0" layoutY="370.0" mnemonicParsing="false" onAction="#playButtonClicked" prefHeight="50.0" prefWidth="54.0" style="-fx-background-radius: 100; -fx-background-color: white;" text="▶">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="playBackButton" layoutX="194.0" layoutY="380.0" minWidth="46.0" mnemonicParsing="false" onAction="#previousSong" prefHeight="24.0" prefWidth="46.0" style="-fx-background-radius: 100; -fx-background-color: white;" text="⏮" />
+                        <Button fx:id="playFastForwardButton" layoutX="309.0" layoutY="383.0" minWidth="46.0" mnemonicParsing="false" onAction="#nextSong" prefHeight="24.0" prefWidth="46.0" style="-fx-background-radius: 100; -fx-background-color: white;" text="⏭ ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ProgressBar fx:id="loadingIndicator" layoutX="176.0" layoutY="214.0" prefWidth="200.0" progress="0.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
