@@ -23,7 +23,7 @@ import javafx.util.Duration;
 
 public class CustomListCell extends ListCell<String> {
     private YouTubeInfoExtractor extractor = new YouTubeInfoExtractor("AIzaSyBOdjUVG0KzSPPmN4pvdy9C_k3cexUEqMo");
-    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
+    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("D:\\Mapua\\Second Year\\CSS124L\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
 
     @Override
     protected void updateItem(String item, boolean empty) {
