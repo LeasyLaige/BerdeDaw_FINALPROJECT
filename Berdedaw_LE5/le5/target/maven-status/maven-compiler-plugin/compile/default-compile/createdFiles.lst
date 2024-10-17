@@ -1,9 +1,4 @@
-com\berdedaw\ModifyPlaylistJson.class
 com\berdedaw\PrimaryController.class
 module-info.class
-com\berdedaw\CustomListCell.class
+com\berdedaw\SecondaryController.class
 com\berdedaw\App.class
-com\berdedaw\PlayVideo.class
-com\berdedaw\LoadingIndicatorManager.class
-com\berdedaw\DownloadVideo.class
-com\berdedaw\YouTubeInfoExtractor.class

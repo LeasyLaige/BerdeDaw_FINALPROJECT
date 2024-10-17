@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 @SuppressWarnings("unused")
 public class DownloadVideo {
-    static String outputDir = "D:\\Mapua\\Second Year\\CSS124L\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads"; // Ensure this directory exists
+    static String outputDir = "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads"; // Ensure this directory exists
     static String apiKey = "AIzaSyBOdjUVG0KzSPPmN4pvdy9C_k3cexUEqMo"; // Replace with your API key
 
     public static void main(String[] args) throws InterruptedException {
@@ -96,7 +96,7 @@ public class DownloadVideo {
         URL url = new URL(thumbnailUrl);
         
         // Define the local path to save the thumbnail
-        String thumbnailDirectory = "D:\\Mapua\\Second Year\\CSS124L\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails";
+        String thumbnailDirectory = "C:\\Users\\john matthew\\Downloads\\Berdedaw_LE5 - Copy(2) (1)\\Berdedaw_LE5 - Copy(5) (1)\\Berdedaw_LE5 - Copy(2)\\Berdedaw_LE5 - Copy\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails";
         File directory = new File(thumbnailDirectory);
         if (!directory.exists()) {
             directory.mkdirs(); // Create directory if it doesn't exist
