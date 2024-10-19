@@ -106,9 +106,10 @@ public class PrimaryController {
         listView.getStylesheets().add(getClass().getResource("/com/berdedaw/listView.css").toExternalForm());
         loadItemsFromJson();
         loadingIndicatorManager = new LoadingIndicatorManager(loadingIndicator);
+        //Don't delete//////////
         try {
             // 
-            FileInputStream serviceAccount = new FileInputStream("C:\\\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
+            FileInputStream serviceAccount = new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com/")
@@ -117,6 +118,7 @@ public class PrimaryController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //Don't delete//////////
 
         // Add a ChangeListener to handle selection changes
         listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

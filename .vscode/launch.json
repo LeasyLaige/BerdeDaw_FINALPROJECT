@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FirebaseLogin",
+            "request": "launch",
+            "mainClass": "com.berdedaw/com.berdedaw.FirebaseLogin",
+            "projectName": "le5"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

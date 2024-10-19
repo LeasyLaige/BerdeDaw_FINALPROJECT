@@ -7,6 +7,7 @@
     <artifactId>le5</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
     <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
@@ -92,19 +93,34 @@
 
     <!-- Firebase Dependencies-->
     <dependency>
-        <groupId>com.google.firebase</groupId>
-        <artifactId>firebase-admin</artifactId>
-        <version>9.1.0</version> <!-- Use the latest version -->
-    </dependency>
+    <groupId>com.google.firebase</groupId>
+    <artifactId>firebase-auth</artifactId>
+    <version>21.1.0</version> <!-- Use the latest version from Maven Central -->
+</dependency>
+
+
+
     <dependency>
         <groupId>com.google.firebase</groupId>
-        <artifactId>firebase-auth</artifactId>
-        <version>20.1.0</version> <!-- Use the latest version from Maven Central -->
+        <artifactId>firebase-admin</artifactId>
+        <version>9.1.0</version>
     </dependency>
-
-
-
+    
 </dependencies>
+
+
+<repositories>
+    <repository>
+        <id>central</id>
+        <name>Central Repository</name>
+        <url>https://repo.maven.apache.org/maven2</url>
+        <layout>default</layout>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
 
 
 <build>
