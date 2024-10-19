@@ -1,4 +1,4 @@
-package com.berdedaw;
+package com.berdedaw.Libraries;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;

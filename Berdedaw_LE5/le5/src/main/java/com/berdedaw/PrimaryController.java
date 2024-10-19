@@ -20,13 +20,24 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.control.ProgressBar;
 import javafx.util.Duration;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 
+
+import com.berdedaw.Libraries.CustomListCell;
+import com.berdedaw.Libraries.DownloadVideo;
+import com.berdedaw.Libraries.LoadingIndicatorManager;
+import com.berdedaw.Libraries.ModifyPlaylistJson;
+import com.berdedaw.Libraries.PlayVideo;
+import com.berdedaw.Libraries.YouTubeInfoExtractor;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
@@ -81,19 +92,30 @@ public class PrimaryController {
     Duration startTime = Duration.seconds(currentVideoDuration);
 
     // Instantiate ModifyPlaylistJson with the correct file path
-    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("D:\\Mapua\\Second Year\\CSS124L\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
+    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
 
     // Instantiate YouTubeInfoExtractor with your API key
     private YouTubeInfoExtractor extractor = new YouTubeInfoExtractor("AIzaSyBOdjUVG0KzSPPmN4pvdy9C_k3cexUEqMo");
 
     private LoadingIndicatorManager loadingIndicatorManager;
 
+    @SuppressWarnings("deprecation")
     @FXML
     public void initialize() {
         listView.setCellFactory(lv -> new CustomListCell());
         listView.getStylesheets().add(getClass().getResource("/com/berdedaw/listView.css").toExternalForm());
         loadItemsFromJson();
         loadingIndicatorManager = new LoadingIndicatorManager(loadingIndicator);
+        try {
+            FileInputStream serviceAccount = new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
+            FirebaseOptions options = new FirebaseOptions.Builder()
+                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com/")
+                .build();
+            FirebaseApp.initializeApp(options);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // Add a ChangeListener to handle selection changes
         listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

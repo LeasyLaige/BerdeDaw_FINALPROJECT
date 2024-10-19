@@ -1,6 +1,8 @@
-package com.berdedaw;
+package com.berdedaw.Libraries;
 
 import java.io.IOException;
+
+import com.berdedaw.PrimaryController;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -23,7 +25,7 @@ import javafx.util.Duration;
 
 public class CustomListCell extends ListCell<String> {
     private YouTubeInfoExtractor extractor = new YouTubeInfoExtractor("AIzaSyBOdjUVG0KzSPPmN4pvdy9C_k3cexUEqMo");
-    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("D:\\Mapua\\Second Year\\CSS124L\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
+    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
 
     @Override
     protected void updateItem(String item, boolean empty) {
