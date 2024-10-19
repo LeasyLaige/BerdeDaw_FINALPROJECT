@@ -107,7 +107,8 @@ public class PrimaryController {
         loadItemsFromJson();
         loadingIndicatorManager = new LoadingIndicatorManager(loadingIndicator);
         try {
-            FileInputStream serviceAccount = new FileInputStream("C:\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
+            // C:\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json
+            FileInputStream serviceAccount = new FileInputStream("");
             FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com/")
