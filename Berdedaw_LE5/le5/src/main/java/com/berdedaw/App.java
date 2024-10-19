@@ -22,9 +22,8 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        // Start your secondary thread or task here
-        //Thread secondaryThread = new Thread(new SecondaryController());
-        //secondaryThread.start();
+        
+
     }
 
     static void setRoot(String fxml) throws IOException {
