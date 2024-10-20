@@ -1,38 +1,17 @@
 {
   "configurations" : [ {
-    "mediaTitle" : "YUNGBLUD - Abyss (from Kaiju No. 8) [Official Lyric Video]",
-    "mediaAuthor" : "YUNGBLUDVEVO",
+    "mediaTitle" : "FUNK UNIVERSO (Slowed)",
+    "mediaAuthor" : "Irokz - Topic",
     "request" : "launch",
-    "mediaLink" : "https://www.youtube.com/watch?v=LYabT4zZnJQ&list=RDLYabT4zZnJQ&start_radio=1",
-    "filePath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\YUNGBLUD - Abyss (from Kaiju No. 8) [Official Lyric Video].m4a",
-    "thumbnailPath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728276885152.jpg"
+    "mediaLink" : "https://www.youtube.com/watch?v=yHKXRcZxpG8&list=RDMMyHKXRcZxpG8&start_radio=1",
+    "filePath" : "C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\FUNK UNIVERSO (Slowed).m4a",
+    "thumbnailPath" : "C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1729433454846.jpg"
   }, {
-    "mediaTitle" : "Hozier - Too Sweet (Official Lyric Video)",
-    "mediaAuthor" : "Hozier",
+    "mediaTitle" : "Kompa Jersey",
+    "mediaAuthor" : "Irokz - Topic",
     "request" : "launch",
-    "mediaLink" : "https://www.youtube.com/watch?v=aezstCBHOPQ&list=RDLYabT4zZnJQ&index=2",
-    "filePath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Hozier - Too Sweet (Official Lyric Video).m4a",
-    "thumbnailPath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280371462.jpg"
-  }, {
-    "mediaTitle" : "Imagine Dragons - Natural (Lyrics)",
-    "mediaAuthor" : "ImagineDragonsVEVO",
-    "request" : "launch",
-    "mediaLink" : "https://www.youtube.com/watch?v=V5M2WZiAy6k&list=RDLYabT4zZnJQ&index=5",
-    "filePath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Imagine Dragons - Natural (Lyrics).m4a",
-    "thumbnailPath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280521834.jpg"
-  }, {
-    "mediaTitle" : "Imagine Dragons - Sharks (Official Music Video)",
-    "mediaAuthor" : "ImagineDragonsVEVO",
-    "request" : "launch",
-    "mediaLink" : "https://www.youtube.com/watch?v=Te3_VlimRw0&list=RDLYabT4zZnJQ&index=6",
-    "filePath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Imagine Dragons - Sharks (Official Music Video).m4a",
-    "thumbnailPath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280665357.jpg"
-  }, {
-    "mediaTitle" : "WTF 2",
-    "mediaAuthor" : "Ugovhb - Topic",
-    "request" : "launch",
-    "mediaLink" : "https://www.youtube.com/watch?v=7n1_Yt1c7qo&list=RDLYabT4zZnJQ&index=8",
-    "filePath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\WTF 2.m4a",
-    "thumbnailPath" : "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1728280860702.jpg"
-  }]
+    "mediaLink" : "https://www.youtube.com/watch?v=ayU__DKuqos&list=RDMMyHKXRcZxpG8&index=7",
+    "filePath" : "C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\Kompa Jersey.m4a",
+    "thumbnailPath" : "C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads\\thumbnails\\Downloading_1729433484225.jpg"
+  } ]
 }

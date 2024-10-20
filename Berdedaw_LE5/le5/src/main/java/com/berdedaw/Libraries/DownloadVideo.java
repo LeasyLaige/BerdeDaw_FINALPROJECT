@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 @SuppressWarnings("unused")
 public class DownloadVideo {
-    static String outputDir = "C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads"; // Ensure this directory exists
+    static String outputDir = "C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Downloads"; // Ensure this directory exists
     static String apiKey = "AIzaSyBOdjUVG0KzSPPmN4pvdy9C_k3cexUEqMo"; // Replace with your API key
 
     public static void main(String[] args) throws InterruptedException {
