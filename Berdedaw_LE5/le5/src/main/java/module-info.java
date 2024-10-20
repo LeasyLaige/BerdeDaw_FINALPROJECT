@@ -7,8 +7,9 @@ module com.berdedaw {
     requires javafx.web;
     requires com.google.gson;
     requires java.net.http;
-    requires firebase.admin;
+
     requires com.google.auth.oauth2;
+    requires javafx.base;
 
     
     opens com.berdedaw to javafx.fxml, com.fasterxml.jackson.databind;

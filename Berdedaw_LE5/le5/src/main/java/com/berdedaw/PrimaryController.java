@@ -5,6 +5,9 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -16,6 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -28,8 +32,8 @@ import javafx.application.Platform;
 import javafx.scene.control.ProgressBar;
 import javafx.util.Duration;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
+/*import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;*/
 
 
 import com.berdedaw.Libraries.CustomListCell;
@@ -88,11 +92,14 @@ public class PrimaryController {
     @FXML
     private Button resumeButton;
 
+    @FXML
+    private Button TransferButton;
+
     private int currentVideoDuration = 0, maxValueDuration = 0;
     Duration startTime = Duration.seconds(currentVideoDuration);
 
     // Instantiate ModifyPlaylistJson with the correct file path
-    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
+    private ModifyPlaylistJson modifyPlaylistJson = new ModifyPlaylistJson("C:\\Users\\Janxen\\Documents\\GitHub\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\playlist.json");
 
     // Instantiate YouTubeInfoExtractor with your API key
     private YouTubeInfoExtractor extractor = new YouTubeInfoExtractor("AIzaSyBOdjUVG0KzSPPmN4pvdy9C_k3cexUEqMo");
@@ -107,7 +114,7 @@ public class PrimaryController {
         loadItemsFromJson();
         loadingIndicatorManager = new LoadingIndicatorManager(loadingIndicator);
         //Don't delete//////////
-        try {
+        /*try {
             // 
             FileInputStream serviceAccount = new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
@@ -120,7 +127,7 @@ public class PrimaryController {
         }
         //Don't delete//////////
 
-        // Add a ChangeListener to handle selection changes
+        // Add a ChangeListener to handle selection changes */
         listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 updateMediaInfo(newValue);
@@ -455,5 +462,84 @@ public class PrimaryController {
         startTime = Duration.seconds(mediaSlider.getValue());
         timeline.pause();
         playButtonClicked();
+    }
+
+    @FXML
+    private void handleTransferButtonClicked() {
+        String selectedItem = listView.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            String[] parts = selectedItem.split(" by ");
+            if (parts.length == 2) {
+                String title = parts[0].trim();
+                String artist = parts[1].trim();
+
+                try {
+                    String localPath = modifyPlaylistJson.getLocalPath(title, artist);
+                    System.out.println("Local path retrieved: " + localPath); // Debugging
+
+                    if (localPath != null) {
+                        File file = new File(localPath);
+                        System.out.println("Checking file: " + file.getAbsolutePath()); // Debugging
+
+                        if (file.exists()) {
+                            String lowerPath = localPath.toLowerCase();
+                            if (lowerPath.endsWith(".mp4") || 
+                                lowerPath.endsWith(".m4a") || 
+                                lowerPath.endsWith(".webm") || 
+                                lowerPath.endsWith(".mp3") || 
+                                lowerPath.endsWith(".wav")) {
+
+                                // Load MiniPlayer FXML
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("secondary.fxml"));
+                                Parent root = loader.load();
+
+                                // Get MiniPlayer controller
+                                MiniPlayer miniPlayer = loader.getController();
+
+                                // Pass the media URI to the MiniPlayer
+                                miniPlayer.setMediaUri(file.toURI().toString());
+
+                                // Update media info in MiniPlayer
+                                miniPlayer.updateMediaInfo(
+                                    title,
+                                    artist,
+                                    mediaImage.getImage() != null ? mediaImage.getImage().getUrl() : null
+                                );
+
+                                // Create a new stage for the MiniPlayer
+                                Stage stage = new Stage();
+                                stage.setScene(new Scene(root));
+                                stage.setTitle("Mini Player");
+                                stage.setResizable(false);
+
+                                // Set a close event handler to stop media playback
+                                stage.setOnCloseRequest(event -> {
+                                    miniPlayer.stopMedia(); // Stop media when closing
+                                });
+                                
+                                Stage primaryStage = App.getPrimaryStage(); // Get the primary stage reference
+                                if (primaryStage != null) {
+                                    primaryStage.hide(); // Hide the primary stage
+                                }
+                                stage.show();
+
+                            } else {
+                                System.err.println("The selected file is not a supported media file.");
+                            }
+                        } else {
+                            System.err.println("File does not exist: " + file.getAbsolutePath());
+                        }
+                    } else {
+                        System.err.println("Local path is null for the selected media.");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("Selected item does not contain valid title and artist.");
+            }
+        } else {
+            System.out.println("No item selected.");
+        }
     }
 }

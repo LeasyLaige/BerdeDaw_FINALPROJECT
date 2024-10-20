@@ -1,4 +1,4 @@
-package com.berdedaw;
+/*package com.berdedaw;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -105,3 +105,4 @@ public class FirebaseLogin extends Application {
         launch(args);
     }
 }
+*/

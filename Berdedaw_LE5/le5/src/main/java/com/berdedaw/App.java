@@ -14,16 +14,19 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private static Stage primaryStage;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 900, 500);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage stage) throws Exception {
+        primaryStage = stage; // Store a reference to the primary stage
+        Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+        primaryStage.setScene(new Scene(root, 900, 500));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
 
-        
-
+    public static Stage getPrimaryStage() {
+        return primaryStage; // Method to access the primary stage
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -38,7 +41,5 @@ public class App extends Application {
     public static void main(String[] args) {
         launch(args);
         
-    }
-
-    
+    } 
 }

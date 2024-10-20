@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #242C36;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.berdedaw.PrimaryController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #242C36;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.berdedaw.PrimaryController">
    <children>
       <AnchorPane prefHeight="500.0" prefWidth="900.0">
          <children>
@@ -40,12 +40,12 @@
                                  <stops>
                                     <Stop>
                                        <color>
-                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                          <Color blue="1.0" green="1.0" red="1.0" />
                                        </color>
                                     </Stop>
                                     <Stop offset="1.0">
                                        <color>
-                                          <Color red="0.11357894539833069" green="0.8526315689086914" blue="0.10105263441801071" />
+                                          <Color blue="0.10105263441801071" green="0.8526315689086914" red="0.11357894539833069" />
                                        </color>
                                     </Stop>
                                  </stops>
@@ -111,6 +111,11 @@
                            </font>
                         </Button>
                         <ProgressBar fx:id="loadingIndicator" layoutX="176.0" layoutY="214.0" prefWidth="200.0" progress="0.0" visible="false" />
+                        <Button fx:id="TransferButton" layoutX="469.0" mnemonicParsing="false" onAction="#handleTransferButtonClicked" style="-fx-background-color: rgba(0,0,0,0);" text="⛶" textFill="WHITE">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>

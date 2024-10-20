@@ -91,14 +91,6 @@
         <version>2.15.2</version>
     </dependency>
 
-    <!-- Firebase Dependencies-->
-    <dependency>
-    <groupId>com.google.firebase</groupId>
-    <artifactId>firebase-auth</artifactId>
-    <version>21.1.0</version> <!-- Use the latest version from Maven Central -->
-</dependency>
-
-
 
     <dependency>
         <groupId>com.google.firebase</groupId>
