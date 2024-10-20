@@ -1,0 +1,10 @@
+com\berdedaw\Libraries\LoadingIndicatorManager.class
+com\berdedaw\Libraries\ModifyPlaylistJson.class
+com\berdedaw\PrimaryController.class
+module-info.class
+com\berdedaw\Libraries\DownloadVideo.class
+com\berdedaw\App.class
+com\berdedaw\MiniPlayer.class
+com\berdedaw\Libraries\CustomListCell.class
+com\berdedaw\Libraries\YouTubeInfoExtractor.class
+com\berdedaw\Libraries\PlayVideo.class
