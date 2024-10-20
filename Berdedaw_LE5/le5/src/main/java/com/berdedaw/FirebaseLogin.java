@@ -2,7 +2,8 @@ package com.berdedaw;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.database.*;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,13 +21,13 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 public class FirebaseLogin extends Application {
 
     private TextField emailField;
     private PasswordField passwordField;
     private Label messageLabel;
-    private DatabaseReference database;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -40,7 +41,7 @@ public class FirebaseLogin extends Application {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Label headerLabel = new Label("Firebase Database Example");
+        Label headerLabel = new Label("Firebase Login");
         headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
         grid.add(headerLabel, 0, 0, 2, 1);
 
@@ -54,11 +55,11 @@ public class FirebaseLogin extends Application {
         passwordField = new PasswordField();
         grid.add(passwordField, 1, 2);
 
-        Button submitButton = new Button("Submit Data");
-        submitButton.setOnAction(event -> submitData());
+        Button loginButton = new Button("Login");
+        loginButton.setOnAction(event -> login());
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
-        hbBtn.getChildren().add(submitButton);
+        hbBtn.getChildren().add(loginButton);
         grid.add(hbBtn, 1, 4);
 
         messageLabel = new Label("");
@@ -67,7 +68,7 @@ public class FirebaseLogin extends Application {
 
         // Create the scene and show the stage
         Scene scene = new Scene(grid, 300, 275);
-        primaryStage.setTitle("Firebase Database");
+        primaryStage.setTitle("Firebase Login");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -75,27 +76,29 @@ public class FirebaseLogin extends Application {
     private void initializeFirebase() throws IOException {
         // Replace with your Firebase configuration file path
         FileInputStream serviceAccount = new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
-
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(com.google.auth.oauth2.GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com/")
                 .build();
         FirebaseApp.initializeApp(options);
-
-        // Get a reference to the Realtime Database
-        database = FirebaseDatabase.getInstance().getReference();
     }
 
-    private void submitData() {
+    private void login() {
         String email = emailField.getText();
         String password = passwordField.getText();
 
-        // Write data to Firebase Realtime Database
-        DatabaseReference userRef = database.child("users").push();
-        userRef.child("email").setValueAsync(email);
-        userRef.child("password").setValueAsync(password);
-
-        messageLabel.setText("Data submitted to Firebase Database.");
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = task.getResult().getUser();
+                        messageLabel.setText("Login successful!");
+                        // You can access user data here
+                        // Example: user.getEmail(), user.getUid()
+                    } else {
+                        messageLabel.setText("Login failed: " + task.getException().getMessage());
+                    }
+                });
     }
 
     public static void main(String[] args) {
