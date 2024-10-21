@@ -1,9 +1,14 @@
 package com.berdedaw;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,14 +19,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
+import javafx.scene.paint.Color;    
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Objects;
 
 public class FirebaseLogin extends Application {
 
@@ -74,32 +78,49 @@ public class FirebaseLogin extends Application {
     }
 
     private void initializeFirebase() throws IOException {
-        // Replace with your Firebase configuration file path
-        FileInputStream serviceAccount = new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-de9fdc72a4.json");
+        FileInputStream serviceAccount =
+        new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-c6ec38a53d.json");
+
+        @SuppressWarnings("deprecation")
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(com.google.auth.oauth2.GoogleCredentials.fromStream(serviceAccount))
-                .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com/")
-                .build();
+            .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+            .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com")
+            .build();
+
         FirebaseApp.initializeApp(options);
     }
 
     private void login() {
-        String email = emailField.getText();
-        String password = passwordField.getText();
+    String email = emailField.getText();
+    String password = passwordField.getText();
 
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        FirebaseUser user = task.getResult().getUser();
+    // Reference to the Firebase Realtime Database
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+
+    // Check if user exists and validate password
+    ref.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            if (dataSnapshot.exists()) {
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String storedPassword = userSnapshot.child("password").getValue(String.class);
+                    if (storedPassword != null && storedPassword.equals(password)) {
                         messageLabel.setText("Login successful!");
-                        // You can access user data here
-                        // Example: user.getEmail(), user.getUid()
-                    } else {
-                        messageLabel.setText("Login failed: " + task.getException().getMessage());
+                        return; // Exit after successful login
                     }
-                });
-    }
+                }
+                messageLabel.setText("Login failed: Incorrect password.");
+            } else {
+                messageLabel.setText("Login failed: User does not exist.");
+            }
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+            messageLabel.setText("Database error: " + databaseError.getMessage());
+        }
+    });
+}
 
     public static void main(String[] args) {
         launch(args);

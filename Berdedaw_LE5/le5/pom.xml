@@ -90,21 +90,25 @@
         <artifactId>jackson-core</artifactId>
         <version>2.15.2</version>
     </dependency>
-
-    <!-- Firebase Dependencies-->
-    <dependency>
-    <groupId>com.google.firebase</groupId>
-    <artifactId>firebase-auth</artifactId>
-    <version>21.1.0</version> <!-- Use the latest version from Maven Central -->
-</dependency>
-
-
-
     <dependency>
         <groupId>com.google.firebase</groupId>
         <artifactId>firebase-admin</artifactId>
         <version>9.1.0</version>
     </dependency>
+
+    <dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.5.0</version> <!-- Replace with the latest version -->
+</dependency>
+
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>2.0.1</version> <!-- Replace with the latest version -->
+</dependency>
+
+
     
 </dependencies>
 
@@ -119,6 +123,7 @@
             <enabled>false</enabled>
         </snapshots>
     </repository>
+  
 </repositories>
 
 

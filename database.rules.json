@@ -1,6 +1,11 @@
 {
   "rules": {
-    ".read": "now < 1731945600000",  // 2024-11-19
-    ".write": "now < 1731945600000",  // 2024-11-19
+    ".read": "now < 1731945600000",  
+    ".write": "now < 1731945600000",
+    ".indexOn": ["email"],
+      "$user_id": {
+        ".validate": "newData.child('email').isString() && newData.child('password').isString()"
+      }
+    
   }
 }
