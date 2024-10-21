@@ -24,8 +24,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class FirebaseLogin extends Application {
 
@@ -79,10 +84,9 @@ public class FirebaseLogin extends Application {
 
     private void initializeFirebase() throws IOException {
         FileInputStream serviceAccount =
-        new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-c6ec38a53d.json");
+            new FileInputStream("C:\\BerdeDaw_FINALPROJECT\\Berdedaw_LE5\\le5\\src\\main\\resources\\com\\berdedaw\\Firebase\\gplay-1918f-firebase-adminsdk-e8ocs-31f67cfa38.json");
 
-        @SuppressWarnings("deprecation")
-        FirebaseOptions options = new FirebaseOptions.Builder()
+        FirebaseOptions options = FirebaseOptions.builder()
             .setCredentials(GoogleCredentials.fromStream(serviceAccount))
             .setDatabaseUrl("https://gplay-1918f-default-rtdb.firebaseio.com")
             .build();
@@ -91,38 +95,93 @@ public class FirebaseLogin extends Application {
     }
 
     private void login() {
-    String email = emailField.getText();
-    String password = passwordField.getText();
+        String email = emailField.getText();
+        String password = passwordField.getText();
 
-    // Reference to the Firebase Realtime Database
-    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
-
-    // Check if user exists and validate password
-    ref.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            if (dataSnapshot.exists()) {
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    String storedPassword = userSnapshot.child("password").getValue(String.class);
-                    if (storedPassword != null && storedPassword.equals(password)) {
-                        messageLabel.setText("Login successful!");
-                        return; // Exit after successful login
-                    }
-                }
-                messageLabel.setText("Login failed: Incorrect password.");
-            } else {
-                messageLabel.setText("Login failed: User does not exist.");
-            }
+        try {
+            String idToken = signInWithEmailAndPassword(email, password);
+            messageLabel.setText("Login successful! ID Token: " + idToken);
+            fetchUserData(idToken); // Fetch user data after successful login
+        } catch (IOException e) {
+            messageLabel.setText("Login failed: " + e.getMessage());
+            e.printStackTrace();
         }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-            messageLabel.setText("Database error: " + databaseError.getMessage());
-        }
-    });
-}
-
-    public static void main(String[] args) {
-        launch(args);
     }
+
+    private String signInWithEmailAndPassword(String email, String password) throws IOException {
+        String apiKey = "AIzaSyATVnKiLc45c-d6yii2EhhtFvpfw6CJBAU"; // Replace with your actual API key
+        String urlString = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey;
+
+        URL url = new URL(urlString);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoOutput(true);
+
+        // JSON payload
+        String jsonInputString = String.format("{\"email\":\"%s\",\"password\":\"%s\",\"returnSecureToken\":true}", email, password);
+
+        try (OutputStream os = connection.getOutputStream()) {
+            byte[] input = jsonInputString.getBytes("utf-8");
+            os.write(input, 0, input.length);
+            os.flush();
+            os.close();
+        }
+
+       // Check for HTTP response code
+       int responseCode = connection.getResponseCode();
+       
+       if (responseCode == HttpURLConnection.HTTP_OK) {
+           // Read response
+           try (BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf-8"))) {
+               StringBuilder response = new StringBuilder();
+               String responseLine;
+
+               while ((responseLine = br.readLine()) != null) {
+                   response.append(responseLine.trim());
+               }
+               return extractIdToken(response.toString());
+           }
+       } else {
+           // Handle error response
+           throw new IOException("HTTP error code: " + responseCode + ", Message: " + connection.getResponseMessage());
+       }
+   }
+
+   private String extractIdToken(String jsonResponse) {
+       // Simple extraction logic (you might want to use a JSON library like Gson or Jackson)
+       String tokenPrefix = "\"idToken\":\"";
+       int startIndex = jsonResponse.indexOf(tokenPrefix) + tokenPrefix.length();
+       int endIndex = jsonResponse.indexOf("\"", startIndex);
+       
+       return jsonResponse.substring(startIndex, endIndex); 
+   }
+
+   private void fetchUserData(String idToken) {
+       // Use the ID token to authenticate requests to the Realtime Database
+       DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users").child(idToken); // Adjust based on your data structure
+
+       ref.addListenerForSingleValueEvent(new ValueEventListener() {
+           @Override
+           public void onDataChange(DataSnapshot dataSnapshot) {
+               if (dataSnapshot.exists()) {
+                   // Process user data here
+                   String userData = dataSnapshot.getValue(String.class); // Adjust based on your data structure
+                   System.out.println("User Data: " + userData);
+               } else {
+                   System.out.println("No user data found.");
+               }
+           }
+
+           @Override
+           public void onCancelled(DatabaseError databaseError) {
+               messageLabel.setText("Database error: " + databaseError.getMessage());
+           }
+       });
+   }
+
+   public static void main(String[] args) {
+       launch(args);
+   }
 }

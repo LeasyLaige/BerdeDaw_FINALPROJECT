@@ -1,7 +1,7 @@
 {
   "rules": {
-    ".read": "now < 1731945600000",  
-    ".write": "now < 1731945600000",
+    ".read": true,  
+    ".write": true,
     ".indexOn": ["email"],
       "$user_id": {
         ".validate": "newData.child('email').isString() && newData.child('password').isString()"
